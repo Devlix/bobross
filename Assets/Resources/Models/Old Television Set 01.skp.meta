@@ -1,0 +1,158 @@
+fileFormatVersion: 2
+guid: 4448c1c901dc0984e87bafb3386f9b1b
+timeCreated: 1453405427
+licenseType: Free
+SketchUpImporter:
+  generateBackFace: 0
+  mergeCoplanarFaces: 0
+  selectedNodes: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a0000000b0000000c0000000d0000000e0000000f000000100000001100000012000000130000001400000015000000160000001700000018000000190000001a0000001b0000001c000000
+  assetHash:
+    serializedVersion: 2
+    Hash: 385e956cf0984a2224bea4b078cb7d4e
+  longitude: -2.25
+  latitude: 53.483
+  northCorrection: -0
+  fileUnit: 0
+  sketchUpImportData:
+    defaultCamera:
+      position: {x: -0.7963469, y: 1.0348922, z: -1.4328866}
+      lookAt: {x: 0.022671646, y: 0.4153462, z: 0.012221724}
+      up: {x: 0.17231034, y: 0.93694943, z: 0.3040311}
+      fov: 35
+      aspectRatio: 0
+      orthoSize: 1
+      isPerspective: 1
+    scenes: []
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Controls
+    100002: Magazine Shelf
+    100004: //RootNode
+    100006: Television Leg
+    100008: Television Leg 1
+    100010: Television Leg 2
+    100012: Television Leg 3
+    100014: Television Set
+    100016: Tie Rod Front
+    100018: Tie Rod Front 1
+    100020: Tie Rod Side
+    100022: Tie Rod Side 1
+    100024: TV Guide 01
+    100026: TV Guide 02
+    100028: TV Guide 03
+    400000: Controls
+    400002: Magazine Shelf
+    400004: //RootNode
+    400006: Television Leg
+    400008: Television Leg 1
+    400010: Television Leg 2
+    400012: Television Leg 3
+    400014: Television Set
+    400016: Tie Rod Front
+    400018: Tie Rod Front 1
+    400020: Tie Rod Side
+    400022: Tie Rod Side 1
+    400024: TV Guide 01
+    400026: TV Guide 02
+    400028: TV Guide 03
+    2300000: Controls
+    2300002: Magazine Shelf
+    2300004: Television Leg
+    2300006: Television Leg 1
+    2300008: Television Leg 2
+    2300010: Television Leg 3
+    2300012: Television Set
+    2300014: Tie Rod Front
+    2300016: Tie Rod Front 1
+    2300018: Tie Rod Side
+    2300020: Tie Rod Side 1
+    2300022: TV Guide 01
+    2300024: TV Guide 02
+    2300026: TV Guide 03
+    3300000: Controls
+    3300002: Magazine Shelf
+    3300004: Television Leg
+    3300006: Television Leg 1
+    3300008: Television Leg 2
+    3300010: Television Leg 3
+    3300012: Television Set
+    3300014: Tie Rod Front
+    3300016: Tie Rod Front 1
+    3300018: Tie Rod Side
+    3300020: Tie Rod Side 1
+    3300022: TV Guide 01
+    3300024: TV Guide 02
+    3300026: TV Guide 03
+    4300000: Mesh Television Set
+    4300002: Mesh Controls
+    4300004: Mesh Television Leg
+    4300006: Mesh Tie Rod Front
+    4300008: Mesh Tie Rod Side
+    4300010: Mesh Magazine Shelf
+    4300012: Mesh TV Guide 01
+    4300014: Mesh TV Guide 02
+    4300016: Mesh TV Guide 03
+  materials:
+    importMaterials: 1
+    materialName: 2
+    materialSearch: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.0254
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
