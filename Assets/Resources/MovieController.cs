@@ -9,7 +9,6 @@ public class MovieController : MonoBehaviour
     public int currentMovie = 0;
     public Renderer rend;
     public Texture[] textures;
-    private bool loopTime = false;
     // Use this for initialization
 
     public void Update()
