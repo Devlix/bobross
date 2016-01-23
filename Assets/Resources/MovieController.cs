@@ -9,7 +9,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public MovieTexture movieTexture;
         private AudioSource aud;
         // Use this for initialization
-        void Start()
+        public void Start()
         {
             AudioSource aud = GetComponent<AudioSource>();
             aud.clip = movieTexture.audioClip;

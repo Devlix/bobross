@@ -11,7 +11,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Camera inputCamera;
         private GameObject brush;
         private BrushSelection brushSelector;
-        private MovieController movieInput;
 
         // Use this for initialization
         public void Start() {
@@ -19,12 +18,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             brush = Resources.Load<GameObject>("brush");
             brushSelector = new BrushSelection();
             brushSelector.Start();
-            movieInput = new MovieController();
         }
 
         public void InputHandle()
         {
-            movieInput.handleControls();
             if(Input.GetMouseButton(0)) //apply brush
             {
                 RaycastHit brushHit;
@@ -44,6 +41,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 brushSelector.PreviousBrush();
             }
+
+
         }
 
     }

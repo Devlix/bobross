@@ -8,17 +8,21 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [Serializable]
     public class BrushSelection : MonoBehaviour
     {
-        private Texture[] brushSelection;
+        private Texture[] brushTextures;
         public GameObject brush;
+        private GameObject[] brushSelection;
         private int currentBrushIndex = 0;
         // Use this for initialization
         public void Start()
         {
-            brushSelection = Resources.LoadAll<Texture>("Brushes");
+            brushTextures = Resources.LoadAll<Texture>("Brushes");
             brush = Resources.Load<GameObject>("brush");
-            for(int i = 0; i < brushSelection.Length; i++)
+            for(int i = 0; i < brushTextures.Length; i++)
             {
-
+                GameObject instantiatedBrush = Instantiate(brush, new Vector3(100, 100, 100), Quaternion.identity) as GameObject;
+                Renderer brushRenderer = instantiatedBrush.GetComponent<Renderer>();
+                brushRenderer.sharedMaterial.mainTexture = brushTextures[i];
+                brushSelection[i] = instantiatedBrush;
             }
         }
 
@@ -29,8 +33,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 currentBrushIndex = 0;
             }
-            Renderer brushRenderer = brush.GetComponent<Renderer>();
-            brushRenderer.sharedMaterial.mainTexture = brushSelection[currentBrushIndex];
+            
         }
 
         public void PreviousBrush()
@@ -40,8 +43,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 currentBrushIndex = brushSelection.Length;
             }
-            Renderer brushRenderer = brush.GetComponent<Renderer>();
-            brushRenderer.sharedMaterial.mainTexture = brushSelection[currentBrushIndex];
+            
         }
 
     }
