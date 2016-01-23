@@ -12,21 +12,33 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public GameObject brush;
         private int currentBrushIndex = 0;
         // Use this for initialization
-        void Start()
+        public void Start()
         {
             brushSelection = Resources.LoadAll<Texture>("Brushes");
             brush = Resources.Load<GameObject>("brush");
         }
 
-        void NextBrush()
+        public void NextBrush()
         {
             currentBrushIndex++;
+            if (currentBrushIndex > brushSelection.Length)
+            {
+                currentBrushIndex = 0;
+            }
+            Renderer brushRenderer = brush.GetComponent<Renderer>();
+            brushRenderer.material.mainTexture = brushSelection[currentBrushIndex];
         }
 
-        // Update is called once per frame
-        void Update()
+        public void PreviousBrush()
         {
-
+            currentBrushIndex--;
+            if (currentBrushIndex < brushSelection.Length)
+            {
+                currentBrushIndex = brushSelection.Length;
+            }
+            Renderer brushRenderer = brush.GetComponent<Renderer>();
+            brushRenderer.material.mainTexture = brushSelection[currentBrushIndex];
         }
+
     }
 }

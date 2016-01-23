@@ -29,7 +29,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		[SerializeField] private AudioClip m_JumpSound;           // the sound played when character leaves the ground.
 		[SerializeField] private AudioClip m_LandSound;           // the sound played when character touches back on ground.
 
-		private Camera m_Camera;
+		public static Camera m_Camera;
 		private bool m_Jump;
 		private float m_YRotation;
 		private Vector2 m_Input;
@@ -42,9 +42,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		private float m_NextStep;
 		private bool m_Jumping;
 		private AudioSource m_AudioSource;
-        private BrushSelection brushSelector;
+        private HandleInput inputHandle;
 
-        private GameObject brush;
 
 		// Use this for initialization
 		private void Start()
@@ -59,7 +58,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			m_Jumping = false;
 			m_AudioSource = GetComponent<AudioSource>();
 			m_MouseLook.Init(transform , m_Camera.transform);
-            brush = Resources.Load<GameObject>("brush");
+            inputHandle = new HandleInput();
+            inputHandle.Start();
 		}
 
 
@@ -135,16 +135,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
 			ProgressStepCycle(speed);
 			UpdateCameraPosition(speed);
 
-			if (Input.GetMouseButton(0))
-			{
-				RaycastHit hit;
-				if (Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit))
-				{
-                    //Debug.DrawLine(m_Camera.transform.position, hit.point, Color.green, 5);
-                    GameObject instantiatedBrush = Instantiate(brush, hit.point + (hit.normal/1000), Quaternion.FromToRotation(Vector3.up, hit.normal)) as GameObject;
-
-				}
-			}
+            inputHandle.InputHandle();
+			
 		}
 
 
