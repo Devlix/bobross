@@ -16,6 +16,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             brushSelection = Resources.LoadAll<Texture>("Brushes");
             brush = Resources.Load<GameObject>("brush");
+            for(int i = 0; i < brushSelection.Length; i++)
+            {
+
+            }
         }
 
         public void NextBrush()
@@ -26,18 +30,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 currentBrushIndex = 0;
             }
             Renderer brushRenderer = brush.GetComponent<Renderer>();
-            brushRenderer.material.mainTexture = brushSelection[currentBrushIndex];
+            brushRenderer.sharedMaterial.mainTexture = brushSelection[currentBrushIndex];
         }
 
         public void PreviousBrush()
         {
             currentBrushIndex--;
-            if (currentBrushIndex < brushSelection.Length)
+            if (currentBrushIndex < 0)
             {
                 currentBrushIndex = brushSelection.Length;
             }
             Renderer brushRenderer = brush.GetComponent<Renderer>();
-            brushRenderer.material.mainTexture = brushSelection[currentBrushIndex];
+            brushRenderer.sharedMaterial.mainTexture = brushSelection[currentBrushIndex];
         }
 
     }
