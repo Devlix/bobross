@@ -42,6 +42,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 		private float m_NextStep;
 		private bool m_Jumping;
 		private AudioSource m_AudioSource;
+        private BrushSelection brushSelector;
 
         private GameObject brush;
 
@@ -139,8 +140,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 				RaycastHit hit;
 				if (Physics.Raycast(m_Camera.transform.position, m_Camera.transform.forward, out hit))
 				{
-                    Debug.DrawLine(m_Camera.transform.position, hit.point, Color.green, 5);
-                    
+                    //Debug.DrawLine(m_Camera.transform.position, hit.point, Color.green, 5);
+                    GameObject instantiatedBrush = Instantiate(brush, hit.point + (hit.normal/1000), Quaternion.FromToRotation(Vector3.up, hit.normal)) as GameObject;
+
 				}
 			}
 		}
