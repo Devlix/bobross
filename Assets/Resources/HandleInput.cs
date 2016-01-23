@@ -3,19 +3,18 @@ using System.Collections;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
 using UnityStandardAssets.Utility;
+using Image = UnityEngine.UI.Image;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
     public class HandleInput : MonoBehaviour {
 
         private Camera inputCamera;
-        private GameObject brush;
         private BrushSelection brushSelector;
 
         // Use this for initialization
         public void Start() {
             inputCamera = Camera.main;
-            brush = Resources.Load<GameObject>("brush");
             brushSelector = new BrushSelection();
             brushSelector.Start();
         }
@@ -27,8 +26,25 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 RaycastHit brushHit;
                 if(Physics.Raycast(inputCamera.transform.position, inputCamera.transform.forward, out brushHit)){
                     //Debug.DrawLine(m_Camera.transform.position, hit.point, Color.green, 5);
-                    GameObject instantiatedBrush = Instantiate(brush, brushHit.point + (brushHit.normal / 1000), Quaternion.FromToRotation(Vector3.up, brushHit.normal)) as GameObject;
+                    GameObject instantiatedBrush = Instantiate(BrushSelection.brush, brushHit.point + (brushHit.normal / 1000), Quaternion.FromToRotation(Vector3.up, brushHit.normal)) as GameObject;
 
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.V))
+            {
+                RaycastHit colorHit;
+                if (Physics.Raycast(inputCamera.transform.position, inputCamera.transform.forward, out colorHit)) { }
+                {
+                    Debug.DrawLine(inputCamera.transform.position, colorHit.point, Color.green, 5);
+                    if (colorHit.transform.tag == "ColorSelect")
+                    {
+                        print("a");
+                        Debug.DrawLine(inputCamera.transform.position, colorHit.point, Color.red, 10);
+                        GameObject button = Resources.Load<GameObject>("Button");
+                        Image buttonColor = button.GetComponent<Image>();
+                        buttonColor.color = colorHit.transform.GetComponent<Renderer>().material.color;
+                    }
                 }
             }
 

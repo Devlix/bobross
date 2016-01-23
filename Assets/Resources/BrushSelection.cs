@@ -18,13 +18,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             brushSelection = new List<GameObject>();
             brushTextures = Resources.LoadAll<Texture>("Brushes");
-            print(brush);
             for(int i = 0; i < brushTextures.Length; i++)
             {
                 GameObject instantiatedBrush = Instantiate(Resources.Load<GameObject>("brush"), new Vector3(100, 100, 100), Quaternion.identity) as GameObject;
                 Renderer brushRenderer = instantiatedBrush.GetComponent<Renderer>();
                 brushRenderer.material.mainTexture = brushTextures[i];
-                print(instantiatedBrush);
                 brushSelection.Add(instantiatedBrush);
             }
             brush = brushSelection[0];
