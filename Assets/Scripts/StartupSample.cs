@@ -13,7 +13,10 @@ Copyright   :   Copyright 2014 Oculus VR, LLC. All Rights reserved.
 ************************************************************************************/
 
 using UnityEngine;
-using System.Collections;				// required for Coroutines
+using System.Collections;
+using UnityEngine.SceneManagement;
+
+// required for Coroutines
 
 public class StartupSample : MonoBehaviour
 {
@@ -45,7 +48,7 @@ public class StartupSample : MonoBehaviour
 
 		float startTime = Time.realtimeSinceStartup;
 #if !UNITY_PRO_LICENSE
-		Application.LoadLevel(sceneToLoad);
+        SceneManager.LoadScene(sceneToLoad);
 #else
 		//*************************
 		// load the scene asynchronously.
