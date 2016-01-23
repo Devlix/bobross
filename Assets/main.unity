@@ -104,7 +104,7 @@ GameObject:
   - 114: {fileID: 401889066}
   - 82: {fileID: 401889071}
   m_Layer: 0
-  m_Name: Cube (1)
+  m_Name: MovieCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffcc9fb4ad0bf5f4b9a0ee0aaaa91b0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movieTexture: {fileID: 15200000, guid: 140bbc63417d27646b6a27ff5751e52c, type: 3}
+  movieTexture:
+  - {fileID: 15200000, guid: 15acd3803af8cfe4488184b940542937, type: 3}
+  - {fileID: 15200000, guid: 3d32ddb5cb3be44489307e2c24167876, type: 3}
+  - {fileID: 15200000, guid: 140bbc63417d27646b6a27ff5751e52c, type: 3}
+  - {fileID: 15200000, guid: 3a779247fb1ecc54b97902d2f2cc8f9f, type: 3}
+  - {fileID: 15200000, guid: 0680d462d43332241bdcaca011fd7048, type: 3}
+  currentMovie: 0
+  rend: {fileID: 0}
+  textures:
+  - {fileID: 15200000, guid: 15acd3803af8cfe4488184b940542937, type: 3}
+  - {fileID: 15200000, guid: 3d32ddb5cb3be44489307e2c24167876, type: 3}
+  - {fileID: 15200000, guid: 140bbc63417d27646b6a27ff5751e52c, type: 3}
+  - {fileID: 15200000, guid: 3a779247fb1ecc54b97902d2f2cc8f9f, type: 3}
+  - {fileID: 15200000, guid: 0680d462d43332241bdcaca011fd7048, type: 3}
 --- !u!23 &401889067
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -665,7 +678,7 @@ GameObject:
   - 65: {fileID: 1035928083}
   - 23: {fileID: 1035928082}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: EaselCube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

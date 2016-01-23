@@ -5,7 +5,6 @@ using System.Collections;
 public class MovieController : MonoBehaviour
 {
     public MovieTexture[] movieTexture;
-    public string[] movieMeshes;
     private AudioSource aud;
     public int currentMovie = 0;
     public Renderer rend;
