@@ -13,29 +13,31 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public static GameObject brush;
         private List<GameObject> brushSelection;
         private int currentBrushIndex = 0;
+        private Color currentColor;
         // Use this for initialization
         public void Start()
         {
+            currentColor = Color.black;
             brushSelection = new List<GameObject>();
             brushTextures = Resources.LoadAll<Texture>("Brushes");
-            for(int i = 0; i < brushTextures.Length; i++)
-            {
-                GameObject instantiatedBrush = Instantiate(Resources.Load<GameObject>("brush"), new Vector3(100, 100, 100), Quaternion.identity) as GameObject;
-                Renderer brushRenderer = instantiatedBrush.GetComponent<Renderer>();
-                brushRenderer.material.mainTexture = brushTextures[i];
-                brushSelection.Add(instantiatedBrush);
-            }
-            brush = brushSelection[0];
+            brush = Instantiate(Resources.Load<GameObject>("brush"), new Vector3(100, 100, 100), Quaternion.identity) as GameObject;
+            brush.GetComponent<Renderer>().material.mainTexture = brushTextures[currentBrushIndex];
+            brush.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            brush.GetComponent<Renderer>().material.SetColor("_EmissionColor", currentColor);   
         }
 
         public void NextBrush()
         {
             currentBrushIndex++;
-            if (currentBrushIndex > brushSelection.Count)
+            if (currentBrushIndex > brushTextures.Length)
             {
                 currentBrushIndex = 0;
             }
-            brush = brushSelection[currentBrushIndex];
+            brush = Instantiate(Resources.Load<GameObject>("brush"), new Vector3(100, 100, 100), Quaternion.identity) as GameObject;
+            print(brushTextures[currentBrushIndex]);
+            brush.GetComponent<Renderer>().material.mainTexture = brushTextures[currentBrushIndex];
+            brush.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            brush.GetComponent<Renderer>().material.SetColor("_EmissionColor", currentColor);
         }
 
         public void PreviousBrush()
@@ -43,10 +45,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
             currentBrushIndex--;
             if (currentBrushIndex < 0)
             {
-                currentBrushIndex = brushSelection.Count;
+                currentBrushIndex = brushTextures.Length;
             }
-            brush = brushSelection[currentBrushIndex];
-            
+            brush = Instantiate(Resources.Load<GameObject>("brush"), new Vector3(100, 100, 100), Quaternion.identity) as GameObject;
+            brush.GetComponent<Renderer>().material.mainTexture = brushTextures[currentBrushIndex];
+            brush.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            brush.GetComponent<Renderer>().material.SetColor("_EmissionColor", currentColor);
+
+        }
+
+        public void newColor(Color color)
+        {
+            brush = Instantiate(Resources.Load<GameObject>("brush"), new Vector3(100, 100, 100), Quaternion.identity) as GameObject;
+            brush.GetComponent<Renderer>().material.mainTexture = brushTextures[currentBrushIndex];
+            brush.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            brush.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+            brush.GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
+            currentColor = color;
         }
 
     }

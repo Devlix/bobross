@@ -168,6 +168,7 @@ namespace UnityStandardAssets.Characters.FirstPerson {
                 p.y = OVRManager.profile.eyeHeight - 0.5f * Controller.height
                     + Controller.center.y;
                 CameraRig.transform.localPosition = p;
+                
             }
             else if (InitialPose != null)
             {
@@ -176,7 +177,17 @@ namespace UnityStandardAssets.Characters.FirstPerson {
                 CameraRig.transform.localRotation = InitialPose.Value.orientation;
                 InitialPose = null;
             }
-
+            
+            //print(CameraRig.centerEyeAnchor.localEulerAngles.x);
+            if (CameraRig.centerEyeAnchor.localEulerAngles.x > 30 && CameraRig.centerEyeAnchor.localEulerAngles.x < 80)
+            {
+                GameObject.Find("pallette").GetComponentInChildren<Renderer>().enabled = true;
+                GameObject.Find("crosshair").transform.localScale = new Vector3(1, 1, 1);
+       
+            } else {
+                GameObject.Find("pallette").GetComponentInChildren<Renderer>().enabled = false;
+                GameObject.Find("crosshair").transform.localScale = new Vector3(0,0,0);
+            }
             UpdateMovement();
 
             Vector3 moveDirection = Vector3.zero;

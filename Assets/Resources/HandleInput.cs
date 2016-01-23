@@ -31,19 +31,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.V))
+            RaycastHit colorHit;
+            if (Physics.Raycast(inputCamera.transform.position, inputCamera.transform.forward, out colorHit)) { }
             {
-                RaycastHit colorHit;
-                if (Physics.Raycast(inputCamera.transform.position, inputCamera.transform.forward, out colorHit)) { }
-                {
-                    Debug.DrawLine(inputCamera.transform.position, colorHit.point, Color.green, 5);
+                if(colorHit.transform != null){
                     if (colorHit.transform.tag == "ColorSelect")
                     {
-                        print("a");
                         Debug.DrawLine(inputCamera.transform.position, colorHit.point, Color.red, 10);
-                        GameObject button = Resources.Load<GameObject>("Button");
-                        Image buttonColor = button.GetComponent<Image>();
-                        buttonColor.color = colorHit.transform.GetComponent<Renderer>().material.color;
+                        brushSelector.newColor(colorHit.transform.GetComponent<Renderer>().material.color);
                     }
                 }
             }
