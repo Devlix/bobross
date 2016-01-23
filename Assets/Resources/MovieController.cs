@@ -1,25 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace UnityStandardAssets.Characters.FirstPerson
+
+public class MovieController : MonoBehaviour
 {
-    public class MovieController : MonoBehaviour
+    public MovieTexture movieTexture;
+    private AudioSource aud;
+    // Use this for initialization
+    public void Start()
     {
+        aud = GetComponent<AudioSource>();
+        aud.clip = movieTexture.audioClip;
+        movieTexture.Play();
+        aud.Play();
+    }
 
-        public MovieTexture movieTexture;
-        private AudioSource aud;
-        // Use this for initialization
-        public void Start()
+    public void handleControls()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
         {
-            AudioSource aud = GetComponent<AudioSource>();
-            aud.clip = movieTexture.audioClip;
-            movieTexture.Play();
-            aud.Play();
+            
         }
-        public void handleControls()
-        {
-
-        }
-
     }
 }
