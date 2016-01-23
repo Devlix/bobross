@@ -20,6 +20,7 @@ limitations under the License.
 ************************************************************************************/
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SceneTransition : MonoBehaviour
 {
@@ -56,7 +57,7 @@ public class SceneTransition : MonoBehaviour
 		
 		float startTime = Time.realtimeSinceStartup;
 #if !UNITY_PRO_LICENSE
-		Application.LoadLevel(sceneToLoad);
+        SceneManager.LoadScene(sceneToLoad);
 #else
 		//*************************
 		// load the scene asynchronously.
