@@ -182,10 +182,18 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             if (CameraRig.centerEyeAnchor.localEulerAngles.x > 30 && CameraRig.centerEyeAnchor.localEulerAngles.x < 80)
             {
                 GameObject.Find("pallette").GetComponentInChildren<Renderer>().enabled = true;
+                foreach (Renderer colorBalls in GameObject.Find("pallette").GetComponentsInChildren<Renderer>())
+                {
+                    colorBalls.enabled = true;
+                }
                 GameObject.Find("crosshair").transform.localScale = new Vector3(1, 1, 1);
        
             } else {
                 GameObject.Find("pallette").GetComponentInChildren<Renderer>().enabled = false;
+                foreach (Renderer colorBalls in GameObject.Find("pallette").GetComponentsInChildren<Renderer>())
+                {
+                    colorBalls.enabled = false;
+                }
                 GameObject.Find("crosshair").transform.localScale = new Vector3(0,0,0);
             }
             UpdateMovement();

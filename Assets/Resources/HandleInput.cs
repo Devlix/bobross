@@ -34,11 +34,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
             RaycastHit colorHit;
             if (Physics.Raycast(inputCamera.transform.position, inputCamera.transform.forward, out colorHit)) { }
             {
-                if(colorHit.transform != null){
+                if (colorHit.transform != null){
+                    print(colorHit.transform.tag);
                     if (colorHit.transform.tag == "ColorSelect")
                     {
-                        Debug.DrawLine(inputCamera.transform.position, colorHit.point, Color.red, 10);
+                        //Debug.DrawLine(inputCamera.transform.position, colorHit.point, Color.red, 10);
+                        print("a");
                         brushSelector.newColor(colorHit.transform.GetComponent<Renderer>().material.color);
+                        GameObject.Find("colorsample").GetComponent<Image>().color = colorHit.transform.GetComponent<Renderer>().material.color;
                     }
                 }
             }
