@@ -13,11 +13,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
         public static GameObject brush;
         private List<GameObject> brushSelection;
         private int currentBrushIndex = 0;
-        private Color currentColor;
+        public static Color currentColor;
         // Use this for initialization
         public void Start()
         {
-            currentColor = Color.black;
+            if (currentColor == null)
+            {
+                currentColor = Color.black;
+            }
             brushSelection = new List<GameObject>();
             brushTextures = Resources.LoadAll<Texture>("Brushes");
             brush = Instantiate(Resources.Load<GameObject>("brush"), new Vector3(100, 100, 100), Quaternion.identity) as GameObject;
@@ -51,18 +54,23 @@ namespace UnityStandardAssets.Characters.FirstPerson
             brush.GetComponent<Renderer>().material.mainTexture = brushTextures[currentBrushIndex];
             brush.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
             brush.GetComponent<Renderer>().material.SetColor("_EmissionColor", currentColor);
+            
 
         }
 
         public void newColor(Color color)
         {
+            print(color);
             brush = Instantiate(Resources.Load<GameObject>("brush"), new Vector3(100, 100, 100), Quaternion.identity) as GameObject;
             brush.GetComponent<Renderer>().material.mainTexture = brushTextures[currentBrushIndex];
-            brush.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
             brush.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
             brush.GetComponent<Renderer>().material.SetColor("_EmissionColor", color);
             currentColor = color;
         }
 
+       void update()
+        {
+            print(currentColor);
+        }
     }
 }

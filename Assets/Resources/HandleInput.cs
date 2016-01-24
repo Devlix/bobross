@@ -37,21 +37,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             GameObject.Find("mixball").tag = "ColorMix";
         }
+        public static void drawBrush(RaycastHit brushHit)
+        {
+            if (brushHit.transform.tag == "Easel")
+            {
+                GameObject instantiatedBrush = Instantiate(BrushSelection.brush, brushHit.point + (brushHit.normal / 1000), Quaternion.FromToRotation(Vector3.up, brushHit.normal)) as GameObject;
+                instantiatedBrush.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
+                instantiatedBrush.GetComponent<Renderer>().material.SetColor("_EmissionColor", BrushSelection.currentColor);
+
+            }
+        }
         public void InputHandle()
         {
-            if(Input.GetMouseButton(0)) //apply brush
-            {
-                RaycastHit brushHit;
-                if(Physics.Raycast(inputCamera.transform.position, inputCamera.transform.forward, out brushHit)){
-                    //Debug.DrawLine(m_Camera.transform.position, hit.point, Color.green, 5);
-                    if (brushHit.transform.tag == "Easel")
-                    {
-                        GameObject instantiatedBrush = Instantiate(BrushSelection.brush, brushHit.point + (brushHit.normal / 1000), Quaternion.FromToRotation(Vector3.up, brushHit.normal)) as GameObject;
-
-                    }
-
-                }
-            }
 
             RaycastHit colorHit;
             if (Physics.Raycast(inputCamera.transform.position, inputCamera.transform.forward, out colorHit))

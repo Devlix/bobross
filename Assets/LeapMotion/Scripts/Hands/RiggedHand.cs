@@ -15,8 +15,12 @@ public class RiggedHand : HandModel {
   public Vector3 modelFingerPointing = Vector3.forward;
   public Vector3 modelPalmFacing = -Vector3.up;
 
+    public UnityStandardAssets.Characters.FirstPerson.HandleInput inputHandle;
+
   public override void InitHand() {
     UpdateHand();
+        inputHandle = new UnityStandardAssets.Characters.FirstPerson.HandleInput();
+        inputHandle.Start();
   }
 
   public Quaternion Reorientation() {
@@ -51,14 +55,11 @@ public class RiggedHand : HandModel {
                 
             }
 
-            if (Input.GetKeyDown(KeyCode.V))
+            //print(controller_.GetFrame().Hands[0].Fingers[0].TipPosition);
+            RaycastHit rayHit;
+            if (Physics.Raycast(controller_.transform.TransformPoint(controller_.GetFrame().Hands[0].Fingers[0].TipPosition.ToUnityScaled()), controller_.transform.TransformDirection(controller_.GetFrame().Hands[0].Fingers[0].Direction.ToUnity()), out rayHit))
             {
-                print(controller_.GetFrame().Hands[0].Fingers[0].TipPosition);
-                RaycastHit rayHit;
-                if (Physics.Raycast(controller_.GetFrame().Hands[0].Fingers[0].TipPosition.ToUnity(), Camera.main.transform.forward, out rayHit))
-                {
-                    Debug.DrawLine(controller_.GetFrame().Hands[0].Fingers[0].TipPosition.ToUnity(), rayHit.point);
-                }
+                UnityStandardAssets.Characters.FirstPerson.HandleInput.drawBrush(rayHit);
             }
 
         }
