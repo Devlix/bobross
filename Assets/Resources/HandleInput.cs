@@ -127,6 +127,19 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 brushSelector.PreviousBrush();
             }
 
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                Application.LoadLevel("01a Start");
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                GameObject[] clones = GameObject.FindGameObjectsWithTag("Brush");
+                foreach (GameObject clone in clones)
+                {
+                    Destroy(clone);
+                }
+            }
 
         }
 
