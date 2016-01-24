@@ -8,7 +8,7 @@ public class FadeIn : MonoBehaviour
     public float fadeInTime = 2f;
 
     private Image fadePanel;
-    private Color currentColor = Color.black;
+    private Color currentColor = Color.white;
     private static bool alreadyPlayed = false;
 
 	// Use this for initialization
