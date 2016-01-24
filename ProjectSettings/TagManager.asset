@@ -46,3 +46,6 @@ TagManager:
   - name: GUI
     uniqueID: 2379361113
     locked: 0
+  - name: Background
+    uniqueID: 3591204783
+    locked: 0
