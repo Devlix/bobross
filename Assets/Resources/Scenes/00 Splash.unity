@@ -260,7 +260,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!1 &1029629748
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +274,7 @@ GameObject:
   - 23: {fileID: 1029629751}
   - 82: {fileID: 1029629749}
   - 114: {fileID: 1029629750}
+  - 114: {fileID: 1029629755}
   m_Layer: 0
   m_Name: SplashCube
   m_TagString: Untagged
@@ -423,7 +424,18 @@ Transform:
   m_LocalScale: {x: 10.6072035, y: 14.603349, z: 29.350069}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
+--- !u!114 &1029629755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1029629748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c07089c3224eae438b2fb809849c9fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1180411424
 Prefab:
   m_ObjectHideFlags: 0
@@ -505,84 +517,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11423626, guid: 302642678e4e0a243880228ae14bf047, type: 2}
       propertyPath: autoLoadNextLevelAfter
-      value: 26
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 302642678e4e0a243880228ae14bf047, type: 2}
-  m_IsPrefabParent: 0
---- !u!1001 &1184772260
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 11490254, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: levelMusicChangeArray.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 403590, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 403590, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 403590, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 403590, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 403590, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 403590, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 403590, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 403590, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 11490254, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: levelMusicChangeArray.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 74191cd2dc494d74eb6b2d181b89a2b7, type: 3}
-    - target: {fileID: 11490254, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: levelMusicChangeArray.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 74191cd2dc494d74eb6b2d181b89a2b7, type: 3}
-    - target: {fileID: 8228282, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: panLevelCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8228282, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: reverbZoneMixCustomCurve.m_RotationOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8228282, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 11490254, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: levelMusicChangeArray.Array.data[2]
-      value: 
-      objectReference: {fileID: 8300000, guid: 74191cd2dc494d74eb6b2d181b89a2b7, type: 3}
-    - target: {fileID: 11490254, guid: 1016eadc5f8279b48bff127351876973, type: 2}
-      propertyPath: levelMusicChangeArray
-      value: 
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 1016eadc5f8279b48bff127351876973, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1305854285
 GameObject:
