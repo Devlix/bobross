@@ -111,6 +111,7 @@ namespace UnityStandardAssets.Characters.FirstPerson {
         void Awake()
         {
             Controller = gameObject.GetComponent<CharacterController>();
+            Controller.enabled = false;
 
             if (Controller == null)
                 Debug.LogWarning("OVRPlayerController: No CharacterController attached.");
@@ -230,7 +231,7 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             Vector3 predictedXZ = Vector3.Scale((Controller.transform.localPosition + moveDirection), new Vector3(1, 0, 1));
 
             // Move contoller
-            Controller.Move(moveDirection);
+            //Controller.Move(moveDirection);
 
             Vector3 actualXZ = Vector3.Scale(Controller.transform.localPosition, new Vector3(1, 0, 1));
 
