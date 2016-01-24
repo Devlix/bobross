@@ -1,46 +1,18 @@
 fileFormatVersion: 2
-guid: 67f1f684b64504c43ac7ab8ea4a1c1e1
-timeCreated: 1453405326
-licenseType: Free
-SketchUpImporter:
-  generateBackFace: 0
-  mergeCoplanarFaces: 0
-  selectedNodes: 00000000010000000200000003000000
-  assetHash:
-    serializedVersion: 2
-    Hash: 271855e4297a803dbf7fe138b0e0851a
-  longitude: -105.283
-  latitude: 40.017
-  northCorrection: -0
-  fileUnit: 0
-  sketchUpImportData:
-    defaultCamera:
-      position: {x: -1.3069413, y: 1.2658697, z: -2.2194421}
-      lookAt: {x: 0.3286212, y: 0.76617527, z: 0.2840214}
-      up: {x: 0.09014419, y: 0.9863245, z: 0.13797864}
-      fov: 35
-      aspectRatio: 0
-      orthoSize: 1
-      isPerspective: 1
-    scenes: []
+guid: 27df19f247bebd344813479f564c4ef6
+ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
     100000: //RootNode
-    100002: easel.dxf
-    100004: Image 3
     400000: //RootNode
-    400002: easel.dxf
-    400004: Image 3
-    2300000: easel.dxf
-    2300002: Image 3
-    3300000: easel.dxf
-    3300002: Image 3
-    4300000: Mesh easel.dxf
-    4300002: Mesh easel.dxf
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: rack_3
+    9500000: //RootNode
   materials:
     importMaterials: 1
-    materialName: 2
-    materialSearch: 0
+    materialName: 0
+    materialSearch: 2
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -61,12 +33,12 @@ SketchUpImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.0254
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -75,12 +47,12 @@ SketchUpImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
-  importAnimation: 0
+    tangentImportMode: 4
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
@@ -97,7 +69,7 @@ SketchUpImporter:
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 0
   humanoidOversampling: 1
-  additionalBone: 0
+  additionalBone: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

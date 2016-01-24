@@ -44,13 +44,17 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 RaycastHit brushHit;
                 if(Physics.Raycast(inputCamera.transform.position, inputCamera.transform.forward, out brushHit)){
                     //Debug.DrawLine(m_Camera.transform.position, hit.point, Color.green, 5);
-                    GameObject instantiatedBrush = Instantiate(BrushSelection.brush, brushHit.point + (brushHit.normal / 1000), Quaternion.FromToRotation(Vector3.up, brushHit.normal)) as GameObject;
+                    if (brushHit.transform.tag == "Easel")
+                    {
+                        GameObject instantiatedBrush = Instantiate(BrushSelection.brush, brushHit.point + (brushHit.normal / 1000), Quaternion.FromToRotation(Vector3.up, brushHit.normal)) as GameObject;
+
+                    }
 
                 }
             }
 
             RaycastHit colorHit;
-            if (Physics.Raycast(inputCamera.transform.position, inputCamera.transform.forward, out colorHit)) { }
+            if (Physics.Raycast(inputCamera.transform.position, inputCamera.transform.forward, out colorHit))
             {
                 if (colorHit.transform != null){
                     if (colorHit.transform.tag == "ColorSelect")

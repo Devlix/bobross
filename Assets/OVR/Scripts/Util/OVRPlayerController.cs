@@ -180,23 +180,45 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             }
             
             //print(CameraRig.centerEyeAnchor.localEulerAngles.x);
-            if (CameraRig.centerEyeAnchor.localEulerAngles.x > 30 && CameraRig.centerEyeAnchor.localEulerAngles.x < 80)
+            //if (CameraRig.centerEyeAnchor.localEulerAngles.x > 30 && CameraRig.centerEyeAnchor.localEulerAngles.x < 80)
+            //{
+            //    GameObject.Find("pallette").GetComponentInChildren<Renderer>().enabled = true;
+             //   foreach (Renderer colorBalls in GameObject.Find("pallette").GetComponentsInChildren<Renderer>())
+            //    {
+            //        colorBalls.enabled = true;
+             //   }
+                //GameObject.Find("crosshair").transform.localScale = new Vector3(1, 1, 1);
+
+            RaycastHit pallettehit;
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out pallettehit))
             {
-                GameObject.Find("pallette").GetComponentInChildren<Renderer>().enabled = true;
-                foreach (Renderer colorBalls in GameObject.Find("pallette").GetComponentsInChildren<Renderer>())
+                if (pallettehit.transform.tag == "pallette" || pallettehit.transform.tag == "ColorSelect" || pallettehit.transform.tag == "ColorMix")
                 {
-                    colorBalls.enabled = true;
-                }
-                GameObject.Find("crosshair").transform.localScale = new Vector3(1, 1, 1);
-       
-            } else {
-                GameObject.Find("pallette").GetComponentInChildren<Renderer>().enabled = false;
-                foreach (Renderer colorBalls in GameObject.Find("pallette").GetComponentsInChildren<Renderer>())
+                    pallettehit.transform.GetComponentInChildren<Renderer>().enabled = true;
+                    foreach (Renderer colorBalls in pallettehit.transform.GetComponentsInChildren<Renderer>())
+                    {
+                        colorBalls.enabled = true;
+                    }
+                    GameObject.Find("crosshair").transform.localScale = new Vector3(1, 1, 1);
+                } else
                 {
-                    colorBalls.enabled = false;
+                    GameObject.Find("pallette").transform.GetComponentInChildren<Renderer>().enabled = false;
+                    foreach (Renderer colorBalls in GameObject.Find("pallette").transform.GetComponentsInChildren<Renderer>())
+                    {
+                        colorBalls.enabled = false;
+                    }
+                    GameObject.Find("crosshair").transform.localScale = new Vector3(0, 0, 0);
                 }
-                GameObject.Find("crosshair").transform.localScale = new Vector3(0,0,0);
             }
+
+           // } else {
+                //GameObject.Find("pallette").GetComponentInChildren<Renderer>().enabled = false;
+                //foreach (Renderer colorBalls in GameObject.Find("pallette").GetComponentsInChildren<Renderer>())
+                //{
+                //    colorBalls.enabled = false;
+                //}
+                //GameObject.Find("crosshair").transform.localScale = new Vector3(0,0,0);
+           // }
             UpdateMovement();
 
             Vector3 moveDirection = Vector3.zero;
@@ -212,12 +234,12 @@ namespace UnityStandardAssets.Characters.FirstPerson {
             moveDirection += MoveThrottle * SimulationRate * Time.deltaTime;
 
             // Gravity
-            if (Controller.isGrounded && FallSpeed <= 0)
+            /*if (Controller.isGrounded && FallSpeed <= 0)
                 FallSpeed = ((Physics.gravity.y * (GravityModifier * 0.002f)));
             else
                 FallSpeed += ((Physics.gravity.y * (GravityModifier * 0.002f)) * SimulationRate * Time.deltaTime);
 
-            moveDirection.y += FallSpeed * SimulationRate * Time.deltaTime;
+            moveDirection.y += FallSpeed * SimulationRate * Time.deltaTime;*/
 
             // Offset correction for uneven ground
             float bumpUpOffset = 0.0f;
